@@ -1,0 +1,79 @@
+
+body {
+	text-align: center;
+	height: 900px;
+	display: flex;
+	align-items: center;
+	background-image: url('../images/legends.jpg');
+	animation: animate-background linear 30s infinite;
+}
+
+@keyframes animate-background {
+	from{ background-position: 0 40%; }
+	to{ background-position: 100% 40%; }
+}
+
+.container {
+	display: none;
+	height: 600px;
+    margin: 0 auto;
+    width: 500px;
+    background-color: white;
+}
+
+.question {
+	margin: 4% auto;
+	height: 25%;
+	background-color: black;
+	width: 80%;
+	color: white;
+}
+
+.answer {
+	height: 90px;
+	background-color: black;
+	margin: 10px auto;
+	color: white;
+	width: 60%;
+}
+
+.welcome {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	color: white;
+	margin: 0 auto;
+	height: 200px;
+	width:  320px; 
+	border: 2px solid white;
+	opacity: .9;
+}
+.welcome >h1 {
+
+	margin: 0 auto;
+	text-shadow: : 1px 2px  black;
+}
+
+.textContain{
+
+	width: 90%;
+}
+
+.basketball {
+
+	width: 100px;
+    height: 100px;
+	border-radius: 50%;
+	background-color: orange;
+}
+
+.shotClock {
+	display: none;
+	height: 120px;
+    width: 130px;
+    position: fixed;
+    top: 20px;
+    left: 45%;
+    background-color: black;
+}
