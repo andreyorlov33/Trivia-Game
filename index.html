@@ -6,7 +6,17 @@
 		<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 	</head>
 	<body>
-	<div class="shotClock"></div>
+	<div class="scoreWrapper"><
+		<div class="yourScore">
+			<h3>Home</h3>
+			<h3 id="correct"></h3>
+		</div>
+		<div class="shotClock"></div>
+		<div class="wrongAnswer">
+			<h3>Away</h3>
+			<h3 id="wrong"></h3>
+		</div>
+	</div>
 		<div class="welcome">
 			<div class="textContain">
 				<h1>NBA Legends Trivia</h1>
@@ -15,7 +25,7 @@
 				<h3>Take the Shot!</h3>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container  hidden">
 			<div class="question"></div>
 			
 		</div>

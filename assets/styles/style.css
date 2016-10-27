@@ -1,5 +1,6 @@
 
 body {
+	justify-content: center;
 	text-align: center;
 	height: 900px;
 	display: flex;
@@ -14,11 +15,10 @@ body {
 }
 
 .container {
-	/*display: none;*/
 	height: 600px;
-    margin: 0 auto;
+
     width: 500px;
-    background-color: white;
+  
 }
 
 .question {
@@ -38,8 +38,7 @@ body {
 }
 
 .welcome {
-	display: none;
-	/*display: flex;*/
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: black;
@@ -69,13 +68,43 @@ body {
 	background-color: orange;
 }
 
+
+
+.scoreWrapper{
+	position: absolute;
+	width: 35%;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+}
+
 .shotClock {
-	/*display: none;*/
+	margin: 4px;
+	display: inline-block;
 	height: 120px;
     width: 130px;
-    position: fixed;
-    top: 20px;
-    left: 45%;
     background-color: black;
     color: red;
+}
+
+.yourScore {
+	margin:4px;	
+	display: inline-block;
+	height: 120px;
+    width: 130px;
+    background-color: black;
+    color: red;
+}
+.wrongAnswer {
+	margin:4px;
+	display: inline-block;
+	height: 120px;
+    width: 130px;
+
+    background-color: black;
+    color: red;
+}
+
+.hidden {
+	display: none;
 }
