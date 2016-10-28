@@ -3,6 +3,7 @@
 var correctAnswersCount = 0;
 var wrongAnswersCount = 0;
 var shotClockViolation = 0;
+var totalNumberOfQuestions = 0
 var imageDisplay;
 var gameStatus;
 var count; 
@@ -29,6 +30,9 @@ var questionThree = {
 	imageUrl: 'assets/images/clyde.gif',
 }
 
+var ajaxUrl = "assets/";
+
+
 
 var questionsArray = [questionOne, questionTwo , questionThree]
 
@@ -45,6 +49,7 @@ function pickRandomQuestion(){
 	$(".answer").remove();
 	var randomQuestion = questionsArray[Math.floor(Math.random()*questionsArray.length)];
 	displayQuestion(randomQuestion);
+	totalNumberOfQuestions ++;
 	runShotClock();
 }
 
@@ -65,7 +70,7 @@ function displayQuestion(questionDisplayed){
 		}
 			$(".container").append(b);
 	}
-	$(".question").html(questionText);
+	$(".question").html('<h2>"'+questionText+'"</h2>');
 	$(".container").append(imageDisplay);
 	setAnswerEventClicker(correctDisplay);
 }
@@ -84,13 +89,15 @@ function setAnswerEventClicker(correctDisplay){
 			
 		}	
 	});
+	showScore(correctAnswersCount, wrongAnswersCount);
+	checkScore();
 }
 
 
 function correctAnswerClickHandler(correctDisplay){
 	
 	$(".answer").remove();
-	$(".container").append('<h2 id="correctBanner"> Nice Shot!! '+correctDisplay+' Is Correct!!!</h2>')
+	$('<h2 id="correctBanner"> Nice Shot!! '+correctDisplay+' Is Correct!!!</h2>').insertAfter(".question");
 	$(imageDisplay).removeClass("hidden");
 	stopShotClock();
 	setTimeout(pickRandomQuestion, 5000);
@@ -98,10 +105,8 @@ function correctAnswerClickHandler(correctDisplay){
 }
 
 function wrongAnswerClickHandler(correctDisplay){
-	$("#wrong").html(wrongAnswersCount);
-	$("#correct").html(correctAnswersCount);
 	$(".answer").remove();
-	$(".container").append('<h2 id="wrongBanner">You Missed ... <br> correctAnswer is: '+correctDisplay+'</h2>')
+	$('<h2 id="wrongBanner">You Missed ... <br> correctAnswer is: '+correctDisplay+'</h2>').insertAfter(".question");
 	$(imageDisplay).removeClass("hidden");
 	stopShotClock();
 	setTimeout(pickRandomQuestion, 5000);	
@@ -109,10 +114,34 @@ function wrongAnswerClickHandler(correctDisplay){
 
 // NEW RANDOM QUSTION//
 
+function checkScore(){
+	if(wrongAnswersCount === 1){
+		youLost();
+	}
+	else if(correctAnswersCount === 20){
+		youWon();
+	}
+}
+function youWon(){
+	$('.container').empty();
+	var text = "<h2>Click on the ball to play again!</h2>";
+	var startOverButton = '<div class="basketball">';
+	var youWonMessage = '<h2>Nice shooting! You won!... <br> You shot '+correctAnswersCount+' out of '+totalNumberOfQuestions+' <br> Your field goal percentage is '+correctAnswersCount/totalNumberOfQuestions+' and you had '+shotClockViolation+' turn overs!</h2>';
+	$('.container').append(youWonMessage, startOverButton, text);
+
+
+}
+
+function youLost(){
+	$('.container').empty();
+	var text = "<h2>Click on the ball to play again!</h2>";
+	var startOverButton = '<div class="basketball">';
+	var youLostMessage = '<h2>Nice try but you lost... <br> You shot '+correctAnswersCount+' out of '+totalNumberOfQuestions+' <br> Your field goal percentage is '+correctAnswersCount/totalNumberOfQuestions+' and you had '+shotClockViolation+' turn overs!</h2>';
+	$('.container').append(youLostMessage, startOverButton, text);
 
 
 
-
+}
 
 // SHOT CLOCK AND SCORE FUNCTIONS// 
 function runShotClock(){
@@ -132,17 +161,27 @@ function decrement(){
         timeIsUp();
     }
  }
+
 function timeIsUp(){
- $('.shotClock').html('<h2>00</h2>');
- $(".answer").remove();
- 	$(".container").append('<h2 id="wrongBanner">You are out of time! <br> Try again!</h2>')
+ 	$('.shotClock').html('<h2>00</h2>');
+ 	shotClockViolation ++;
+	 $(".answer").remove();
+ 	$('<h2 id="wrongBanner">You are out of time! <br> Try again!</h2>').insertAfter(".question");
 	setTimeout(pickRandomQuestion, 5000);	
+}
+
+function showScore(home,away){
+	$('#correct').html(home);
+	$('#wrong').html(away);
 }
 
 function startGame (){
 	$(".welcome").addClass("hidden");
 	$(".shotClock").removeClass("hidden");
 	$(".container").removeClass("hidden");
+	correctAnswersCount = 0;
+	wrongAnswersCount = 0;
+	shotClockViolation = 0;
 	pickRandomQuestion();
 }
 
@@ -151,8 +190,7 @@ function startGame (){
 
 $(document).ready(function(){
 	$(".basketball").on("click", startGame);
-	$(".answer").on("click", stopShotClock);
-	
+	$(".answer").on("click", stopShotClock);	
 });
 
 

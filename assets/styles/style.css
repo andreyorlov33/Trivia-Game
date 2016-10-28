@@ -2,9 +2,9 @@
 body {
 	justify-content: center;
 	text-align: center;
+	flex-direction: column;
 	height: 900px;
 	display: flex;
-	align-items: center;
 	background-image: url('../images/legends.jpg');
 	animation: animate-background linear 30s infinite;
 }
@@ -15,13 +15,13 @@ body {
 }
 
 .container {
+	margin: 0 auto;
 	height: 600px;
-
     width: 500px;
-  
 }
 
 .question {
+	 
 	margin: 4% auto;
 	height: 25%;
 	background-color: black;
@@ -30,11 +30,16 @@ body {
 }
 
 .answer {
+	 vertical-align:middle
 	height: 90px;
 	background-color: black;
 	margin: 10px auto;
 	color: white;
 	width: 60%;
+}
+
+.answer>h3 {
+	
 }
 
 .welcome {
@@ -61,7 +66,7 @@ body {
 }
 
 .basketball {
-
+	margin: 0 auto;
 	width: 100px;
     height: 100px;
 	border-radius: 50%;
@@ -71,11 +76,10 @@ body {
 
 
 .scoreWrapper{
-	position: absolute;
-	width: 35%;
-	top: 0;
-	display: flex;
-	flex-direction: row;
+    margin: 0 auto;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
 }
 
 .shotClock {
