@@ -37,7 +37,7 @@ var  data={
 		"question": "This Player is the Milwakee Bucks All Time Leading Scorer",
 		"answers": ["Ray Allen", "Glenn Robinson", "Kareem Abdul-Jabbar", "Michael Redd"],
 		"correctAnswer": 2,
-		"imageUrl": "assets/images/Kareem.gif",
+		"imageUrl": "assets/images/kareem.gif",
 	},
 
 
@@ -81,7 +81,7 @@ var  data={
 	{
 		"question": "This Player is the Chicago Bulls All Time Leading Scorer",
 		"answers": ["Michael Jordan", "Scottie Pippen", "Bob Love","Jerry Sloan"],
-		"correctAnswer" : 2,
+		"correctAnswer" : 0,
 		"imageUrl": "assets/images/goat.gif",
 	},
 ]
