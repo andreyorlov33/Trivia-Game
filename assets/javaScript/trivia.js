@@ -77,6 +77,13 @@ var  data={
 		"correctAnswer" : 2,
 		"imageUrl": "assets/images/reggie.gif",
 	},
+
+	{
+		"question": "This Player is the Chicago Bulls All Time Leading Scorer",
+		"answers": ["Michael Jordan", "Scottie Pippen", "Bob Love","Jerry Sloan"],
+		"correctAnswer" : 2,
+		"imageUrl": "assets/images/goat.gif",
+	},
 ]
 }
 
