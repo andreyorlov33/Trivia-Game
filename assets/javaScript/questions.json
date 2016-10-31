@@ -1,0 +1,26 @@
+
+ data:{
+ 	"questions":[
+	{
+		"question": "This Player is the New York Knicks All Time Leading Scorer",
+		"answers": ["John Starks","Patrick Ewing", "Carmelo Anthony","Walt Frazier"],
+		"correctAnswer" : 1,
+		"imageUrl": "assets/images/ewing.gif",
+	},
+
+	{
+		"question": "This Player is the Milwakee Bucks All Time Leading Scorer",
+		"answers": ["Ray Allen", "Glenn Robinson", "Kareem Abdul-Jabbar", "Michael Redd"],
+		"correctAnswer": 2,
+		"imageUrl": "assets/images/Kareem.gif",
+	},
+
+
+	{
+		"question": "This Player is the Portland Trail Blazers All Time Leading Scorer",
+		"answers": ["Lamarcus Aldridge", "Terry Porter", "Clifford Robinson","Clyde Drexler"],
+		"correctAnswer": 3,
+		"imageUrl": "assets/images/clyde.gif",
+	},
+]
+}
